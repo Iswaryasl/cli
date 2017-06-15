@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+ window.onload=function()
+ {
+	 customElements.define('x-product',
+			  class extends HTMLElement {
+			    constructor() {
+			      super();
+			      var template = document
+			        .getElementById('test')
+			        .content;
+			      const shadowRoot = this.attachShadow({mode: 'open'})
+			        .appendChild(template.cloneNode(true));
+			  }
+	})	
+ }
+</script>
+</head>
+<body>
+ <x-product id="example">
+   <span slot="alive">C programming</span>
+   <span slot="still">It is to be hard to explain</span>
+ </x-product> 
+</body>
+<template id="test">
+  <span>
+    <slot name="alive">Heading</slot>
+  </span>
+  <span>
+    <slot name="still">Description</slot>
+  </span>
+  <p>create an c app</p>
+</template>
+</html>

@@ -1,0 +1,21 @@
+<html>
+<head>
+<script>
+window.onpopstate = function(event) 
+{
+	 window.location=window.location.URL;
+};
+function goForward()
+{
+	history.pushState({page: 1}, "title 1", "sample.html");	
+}
+
+</script>
+</head>
+<body>
+
+<input type="button" value="GoForward" onclick="goForward()">
+
+
+</body>
+</html>

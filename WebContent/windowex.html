@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+.button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+</style>
+<script>
+window.onhashchange=function()
+{
+	var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	     document.getElementById("demo").innerHTML = this.responseText;
+	    }
+	  };
+	  var hashvalue=location.hash.split("#");
+	  console.log(hashvalue);
+	  if(hashvalue.length>1)
+		  {
+	  xhttp.open("GET","http://localhost:8080/CustomT/"+hashvalue[1], true);
+	  xhttp.send();
+	  console.log("http://localhost:8080/CustomT/windowex.html"+hashvalue[1])
+		  }
+	  else{
+		 window.location="http://localhost:8080/CustomT/windowex.html";
+	  }
+}
+function a()
+{
+	location.hash="a.html";
+	 var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	     document.getElementById("demo").innerHTML = this.responseText;
+	    }
+	  };
+	  xhttp.open("GET", "a.html", true);
+	  xhttp.send();
+}
+function b()
+{
+	location.hash="b.html";
+	 var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	     document.getElementById("demo").innerHTML = this.responseText;
+	    }
+	  };
+	  xhttp.open("GET", "b.html", true);
+	  xhttp.send();
+}
+function c()
+{
+ location.hash="c.html";
+	 var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	     document.getElementById("demo").innerHTML = this.responseText;
+	    }
+	  };
+	  xhttp.open("GET", "c.html", true);
+	  xhttp.send();
+}
+function d()
+{    
+	location.hash="d.html";
+	 var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	     document.getElementById("demo").innerHTML = this.responseText;
+	    }
+	  };
+	  xhttp.open("GET", "d.html", true);
+	  xhttp.send();
+}
+	
+</script>
+<body>
+<button class="button" onclick="a()">a</button>
+<button class="button" onclick="b()">b</button>
+<button class="button" onclick="c()">c</button>
+<button class="button" onclick="d()">d</button>
+<script>
+window.onclick=function()
+{
+	var div=document.createElement("div");
+	div.id="demo";
+	document.body.appendChild(div);
+}
+</script>
+</body>
+</html>

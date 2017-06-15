@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	document.getElementsByTagName("x-product")[1].setAttribute('width','50');
+	document.getElementById("test").setAttribute('width','20');
+}
+</script>
+</head>
+<script src="XProduct.js"></script>
+<body>
+<x-product id="test" width=10 data-name="Ruby" data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/ruby.png" data-url="http://example.com/1"></x-product>
+<x-product id="mass" width=10 data-name="JavaScript" data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/javascript.png" data-url="http://example.com/2"></x-product>
+<x-product width=10 data-name="Python" data-img="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/python.png" data-url="http://example.com/3"></x-product>
+         
+</body>
+</html>
